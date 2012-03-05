@@ -1,0 +1,391 @@
+recon_transmission_header:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '0'
+  filler_1:
+    data_type: A
+    offset: 2
+    length: 19
+  status:
+    data_type: A
+    offset: 21
+    length: 1
+    regex: ^T|P$
+  date:
+    data_type: N
+    offset: 22
+    length: 8
+    regex: ^[0-9]{8}$
+    no_strip: true
+  client_code:
+    data_type: N
+    offset: 30
+    length: 5
+  client_name:
+    data_type: A
+    offset: 35
+    length: 30
+  destination_code:
+    data_type: N
+    offset: 65
+    length: 5
+  filler_2:
+    data_type: A
+    offset: 70
+    length: 446
+  gen_no:
+    data_type: N
+    offset: 516
+    length: 9
+  filler_3:
+    data_type: A
+    offset: 525
+    length: 25
+recon_account_header:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '1'
+  account_number:
+    data_type: N
+    offset: 2
+    length: 19
+  statement_number:
+    data_type: N
+    offset: 21
+    length: 5
+  filler_1:
+    data_type: A
+    offset: 26
+    length: 5
+  processing_date:
+    data_type: N
+    offset: 31
+    length: 8
+    no_strip: true
+  account_branch_code:
+    data_type: N
+    offset: 39
+    length: 8
+  filler_2:
+    data_type: A
+    offset: 47
+    length: 18
+  hd_op_bals:
+    data_type: A
+    offset: 65
+    length: 1
+    fixed_val: '0'
+  hd_op_bal:
+    data_type: N
+    offset: 66
+    length: 17
+  filler_3:
+    data_type: A
+    offset: 83
+    length: 100
+  function_code:
+    data_type: A
+    offset: 183
+    length: 4
+    fixed_val: 'AA0A'
+  filler_4:
+    data_type: A
+    offset: 187
+    length: 345
+  generation_number:
+    data_type: A
+    offset: 532
+    length: 9
+  filler_5:
+    data_type: A
+    offset: 541
+    length: 9
+recon_account_detail:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '2'
+  account_number:
+    data_type: N
+    offset: 2
+    length: 19
+  statement_number:
+    data_type: N
+    offset: 21
+    length: 5
+  page_number:
+    data_type: N
+    offset: 26
+    length: 5
+  transaction_processing_date:
+    data_type: N
+    offset: 31
+    length: 8
+  transaction_effective_date:
+    data_type: N
+    offset: 39
+    length: 8
+  cheque_number:
+    data_type: N
+    offset: 47
+    length: 9
+  transaction_reference_number:
+    data_type: N
+    offset: 56
+    length: 9
+  transaction_amount_sign:
+    data_type: A
+    offset: 65
+    length: 1
+  transaction_amount:
+    data_type: N
+    offset: 66
+    length: 15
+  account_balance_sign:
+    data_type: A
+    offset: 81
+    length: 1
+  account_balance_after_transaction:
+    data_type: N
+    offset: 82
+    length: 17
+  transaction_description:
+    data_type: A
+    offset: 99
+    length: 50
+  dep_id:
+    data_type: A
+    offset: 149
+    length: 30
+  transaction_code:
+    data_type: A
+    offset: 179
+    length: 4
+  cheques_function_code:
+    data_type: A
+    offset: 183
+    length: 4
+  charge_levied_amount_sign:
+    data_type: A
+    offset: 187
+    length: 1
+  charge_levied_amount:
+    data_type: N
+    offset: 188
+    length: 9
+  charge_type:
+    data_type: A
+    offset: 197
+    length: 1
+  stamp_duty_amount_sign:
+    data_type: A
+    offset: 198
+    length: 1
+  stamp_duty_levied_amount:
+    data_type: N
+    offset: 199
+    length: 9
+  cash_deposit_fee_sign:
+    data_type: A
+    offset: 208
+    length: 1
+  cash_deposit_fee:
+    data_type: N
+    offset: 209
+    length: 9
+  charges_accrued:
+    data_type: A
+    offset: 218
+    length: 1
+    regex: ^1|2$
+  event_number:
+    data_type: N
+    offset: 219
+    length: 9
+  statement_line_sequence_number:
+    data_type: N
+    offset: 228
+    length: 9   
+  vat_amount:
+    data_type: N
+    offset: 237
+    length: 9
+  cash_portion:
+    data_type: N
+    offset: 246
+    length: 15
+  deposit_number:
+    data_type: N
+    offset: 261
+    length: 9
+  transaction_time:
+    data_type: N
+    offset: 270
+    length: 6
+  filler_1:
+    data_type: A
+    offset: 276
+    length: 10
+  filler_2:
+    data_type: A
+    offset: 286
+    length: 4
+  sitename:
+    data_type: A
+    offset: 290
+    length: 15
+  category:
+    data_type: A
+    offset: 305
+    length: 4
+  transaction_type:
+    data_type: A
+    offset: 309
+    length: 2
+  deposit_id_description:
+    data_type: A
+    offset: 311
+    length: 10
+  pod_adjustment_amount:
+    data_type: A
+    offset: 321
+    length: 15
+  pod_adjustment_reason:
+    data_type: A
+    offset: 336
+    length: 35
+  pod_returned_cheque_reason_code:
+    data_type: N
+    offset: 371
+    length: 4
+  pod_returned_cheque_drawee:
+    data_type: A
+    offset: 375
+    length: 30
+  fedi_payor:
+    data_type: A
+    offset: 405
+    length: 30
+  fedi_number:
+    data_type: N
+    offset: 435
+    length: 16
+  redirect_description:
+    data_type: A
+    offset: 451
+    length: 16
+  account_number_redirect:
+    data_type: N
+    offset: 467
+    length: 19
+  unpaid_cheque_reason_description:
+    data_type: A
+    offset: 486
+    length: 20
+  filler_3:
+    data_type: A
+    offset: 506
+    length: 10
+  generation_number:
+    data_type: A
+    offset: 516
+    length: 9
+  old_reconfocus_category1:
+    data_type: N
+    offset: 525
+    length: 2
+  old_reconfocus_category2:
+    data_type: N
+    offset: 527
+    length: 2
+  filler_4:
+    data_type: A
+    offset: 529
+    length: 21
+recon_file_trailer:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '8'
+  account_number:
+    data_type: N
+    offset: 2
+    length: 19
+    fixed_val: '9999999999999999999'
+  filler_1:
+    data_type: A
+    offset: 21
+    length: 44
+  hash_amount_sign:
+    data_type: A
+    offset: 65
+    length: 1
+  hash_amount:
+    data_type: N
+    offset: 66
+    length: 17
+  filler_2:
+    data_type: A
+    offset: 83
+    length: 107
+  rec_count:
+    data_type: N
+    offset: 190
+    length: 10
+  filler_3:
+    data_type: A
+    offset: 200
+    length: 316
+  generation_number:
+    data_type: A
+    offset: 516
+    length: 9
+  filler_4:
+    data_type: A
+    offset: 525
+    length: 25
+recon_transmission_trailer:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '9'
+  account_number:
+    data_type: N
+    offset: 2
+    length: 19
+  status:
+    data_type: A
+    offset: 21
+    length: 1
+  date:
+    data_type: N
+    offset: 22
+    length: 8
+    no_strip: true
+  filler_1:
+    data_type: A
+    offset: 30
+    length: 160
+  rec_count:
+    data_type: N
+    offset: 190
+    length: 10
+  filler_2:
+    data_type: A
+    offset: 200
+    length: 316
+  generation_number:
+    data_type: N
+    offset: 516
+    length: 9
+  filler_3:
+    data_type: A
+    offset: 525
+    length: 25
