@@ -1,0 +1,84 @@
+header:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '0'
+  filler_1:
+    data_type: A
+    offset: 2
+    length: 19
+  status:
+    data_type: A
+    offset: 21
+    length: 1
+    regex: ^T|P$
+  date:
+    data_type: N
+    offset: 22
+    length: 8
+    regex: ^[0-9]{8}$
+    no_strip: true
+  client_code:
+    data_type: N
+    offset: 30
+    length: 5
+  client_name:
+    data_type: A
+    offset: 35
+    length: 30
+  destination_code:
+    data_type: N
+    offset: 65
+    length: 5
+  filler_2:
+    data_type: A
+    offset: 70
+    length: 446
+  gen_no:
+    data_type: N
+    offset: 516
+    length: 9
+  filler_3:
+    data_type: A
+    offset: 525
+    length: 25
+trailer:
+  rec_type:
+    data_type: A
+    offset: 1
+    length: 1
+    fixed_val: '9'
+  account_number:
+    data_type: N
+    offset: 2
+    length: 19
+  status:
+    data_type: A
+    offset: 21
+    length: 1
+  date:
+    data_type: N
+    offset: 22
+    length: 8
+    no_strip: true
+  filler_1:
+    data_type: A
+    offset: 30
+    length: 160
+  rec_count:
+    data_type: N
+    offset: 190
+    length: 10
+  filler_2:
+    data_type: A
+    offset: 200
+    length: 316
+  generation_number:
+    data_type: N
+    offset: 516
+    length: 9
+  filler_3:
+    data_type: A
+    offset: 525
+    length: 25

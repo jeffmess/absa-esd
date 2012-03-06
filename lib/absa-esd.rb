@@ -12,3 +12,4 @@ end
 require 'absa-esd/transmission/set'
 require 'absa-esd/transmission/record'
 require 'absa-esd/transmission/document'
+require 'absa-esd/statement4_unpacked'

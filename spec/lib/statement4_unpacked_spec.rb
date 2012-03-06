@@ -26,4 +26,13 @@ describe Absa::Esd::Statement4Unpacked do
     
   end
   
+  it "should be able to parse an entire 'statement 4 unpacked' file format" do
+    input_string = File.open("./spec/examples/statement4_unpacked.dat", "rb").read
+    
+    puts input_string.inspect
+    document = Absa::Esd::Transmission::Document.from_s(input_string)
+    
+    puts document.inspect
+  end
+  
 end

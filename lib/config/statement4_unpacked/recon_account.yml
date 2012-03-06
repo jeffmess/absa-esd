@@ -1,49 +1,4 @@
-recon_transmission_header:
-  rec_type:
-    data_type: A
-    offset: 1
-    length: 1
-    fixed_val: '0'
-  filler_1:
-    data_type: A
-    offset: 2
-    length: 19
-  status:
-    data_type: A
-    offset: 21
-    length: 1
-    regex: ^T|P$
-  date:
-    data_type: N
-    offset: 22
-    length: 8
-    regex: ^[0-9]{8}$
-    no_strip: true
-  client_code:
-    data_type: N
-    offset: 30
-    length: 5
-  client_name:
-    data_type: A
-    offset: 35
-    length: 30
-  destination_code:
-    data_type: N
-    offset: 65
-    length: 5
-  filler_2:
-    data_type: A
-    offset: 70
-    length: 446
-  gen_no:
-    data_type: N
-    offset: 516
-    length: 9
-  filler_3:
-    data_type: A
-    offset: 525
-    length: 25
-recon_account_header:
+header:
   rec_type:
     data_type: A
     offset: 1
@@ -74,37 +29,40 @@ recon_account_header:
     data_type: A
     offset: 47
     length: 18
-  hd_op_bals:
-    data_type: A
-    offset: 65
-    length: 1
-    fixed_val: '0'
-  hd_op_bal:
-    data_type: N
-    offset: 66
-    length: 17
   filler_3:
     data_type: A
-    offset: 83
-    length: 100
+    offset: 65
+    length: 16
+  hd_op_bals:
+    data_type: A
+    offset: 81
+    length: 1
+  hd_op_bal:
+    data_type: N
+    offset: 82
+    length: 17
+  filler_4:
+    data_type: A
+    offset: 99
+    length: 84
   function_code:
     data_type: A
     offset: 183
     length: 4
     fixed_val: 'AA0A'
-  filler_4:
-    data_type: A
-    offset: 187
-    length: 345
-  generation_number:
-    data_type: A
-    offset: 532
-    length: 9
   filler_5:
     data_type: A
-    offset: 541
+    offset: 187
+    length: 329
+  generation_number:
+    data_type: A
+    offset: 516
     length: 9
-recon_account_detail:
+  filler_6:
+    data_type: A
+    offset: 525
+    length: 25
+detail:
   rec_type:
     data_type: A
     offset: 1
@@ -202,7 +160,6 @@ recon_account_detail:
     data_type: A
     offset: 218
     length: 1
-    regex: ^1|2$
   event_number:
     data_type: N
     offset: 219
@@ -307,7 +264,7 @@ recon_account_detail:
     data_type: A
     offset: 529
     length: 21
-recon_file_trailer:
+trailer:
   rec_type:
     data_type: A
     offset: 1
@@ -347,45 +304,6 @@ recon_file_trailer:
     offset: 516
     length: 9
   filler_4:
-    data_type: A
-    offset: 525
-    length: 25
-recon_transmission_trailer:
-  rec_type:
-    data_type: A
-    offset: 1
-    length: 1
-    fixed_val: '9'
-  account_number:
-    data_type: N
-    offset: 2
-    length: 19
-  status:
-    data_type: A
-    offset: 21
-    length: 1
-  date:
-    data_type: N
-    offset: 22
-    length: 8
-    no_strip: true
-  filler_1:
-    data_type: A
-    offset: 30
-    length: 160
-  rec_count:
-    data_type: N
-    offset: 190
-    length: 10
-  filler_2:
-    data_type: A
-    offset: 200
-    length: 316
-  generation_number:
-    data_type: N
-    offset: 516
-    length: 9
-  filler_3:
     data_type: A
     offset: 525
     length: 25
