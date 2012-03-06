@@ -12,7 +12,6 @@ PATH
     absa-esd (0.0.1)
       activesupport
       i18n
-      strata
 
 GEM
   remote: http://rubygems.org/
