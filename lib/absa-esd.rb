@@ -1,6 +1,7 @@
 require "absa-esd/version"
 require "active_support/core_ext/string"
 require "yaml"
+require 'strata'
 
 module Absa
   module Esd
