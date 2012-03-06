@@ -9,7 +9,7 @@ GIT
 PATH
   remote: .
   specs:
-    absa-esd (0.0.11)
+    absa-esd (0.0.1)
       activesupport
       i18n
       strata
