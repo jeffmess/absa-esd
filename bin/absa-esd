@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require 'absa-esd'
+require 'absa-esd/version'
+
+options = {}
+
+opt_parser = OptionParser.new do |opt|
+  opt.banner = "Usage: opt_parser COMMAND [OPTIONS]"
+  opt.separator  ""
+  opt.separator  "Commands"
+  opt.separator  "     absa-esd <FILENAME>"
+  opt.separator  ""
+  opt.separator  "Options"
+
+  opt.on("-h","--help","help") do
+    puts opt_parser
+  end
+  
+  opt.on("-v","--version","version") do
+    puts Absa::Esd::VERSION
+  end
+end
+
+opt_parser.parse!
+
+if ARGV[0]
+  file = Dir.pwd + "/" + ARGV[0]
+  file_contents = File.open(file, "rb").read
+  options = Absa::Esd::Transmission::Document.hash_from_s(file_contents)
+
+  puts options.to_yaml
+end
